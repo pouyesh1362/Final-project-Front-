@@ -1,0 +1,17 @@
+img{
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+  
+  margin-left: 20px;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+img:hover{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(58, 223, 26, 0.7);
+  transition: tranform 2s;
+  border: blue;
+  
+}

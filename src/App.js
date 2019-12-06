@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import axios from 'axios';
+import Navbar from './Navbar/Navbar'
+import Routes from './config/routes';
+import { withRouter } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    currentUser: localStorage.getItem('uid'),
+  };
+
+  setCurrentUser = (userId) => {
+    this.setState({ currentUser: userId });
+    localStorage.setItem('uid', userId);
+  };
+
+  logout = () => {
+    localStorage.removeItem('uid');
+    axios.post(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+        this.setState({ currentUser: null });
+        this.props.history.push('/login');
+      })
+      .catch(err => console.log(err));
+  }
+
+  render() {
+    return (
+      <>
+        <Navbar currentUser={this.state.currentUser} logout={this.logout} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+      
+      </>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
