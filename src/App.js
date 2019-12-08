@@ -17,14 +17,16 @@ class App extends Component {
 
   logout = () => {
     localStorage.removeItem('uid');
-    axios.post(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
-      .then(res => {
-        console.log(res);
-        this.setState({ currentUser: null });
-        this.props.history.push('/login');
-      })
-      .catch(err => console.log(err));
-  }
+    axios.post(`${process.env.REACT_APP_API_URL}/auth/logout`, { withCredentials: true })
+    .then(res => {
+      console.log(res);
+      this.setState({ currentUser: null });
+      localStorage.removeItem('uid');
+      this.props.history.push('/');
+    })
+    .catch(err => console.log(err));
+}
+
 
   render() {
     return (

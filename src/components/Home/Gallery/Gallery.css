@@ -1,0 +1,28 @@
+
+
+.Gallery-image {
+	cursor: pointer;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
+}
+
+.Gallery-image:hover {
+	opacity: .6;
+}
+
+.Gallery-image {
+
+  width :400px;
+  margin: 50px;
+  height: 400px;
+}
+
+@media (max-width: 500px) {
+	.Gallery-image{
+    width :100px;
+    margin: 20px;
+    height: 100px;
+	}
+}

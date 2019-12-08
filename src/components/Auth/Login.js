@@ -14,19 +14,19 @@ class Login extends Component {
     };
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`${process.env.REACT_APP_API_URL}/login`, this.state, {
+        axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {
             withCredentials: true,
         })
         .then((res) => {
-            console.log(res.data);
+    
             let userData = res.data.data;
             this.props.setCurrentUser(userData);
             this.props.history.push(`/profile`);
+            
         })
         .catch((err) => console.log(err));
     }
     render() {
-        console.log(this.props);
         return (
           <div className="container mt-4 jumbotron">
               <div className="row">
@@ -41,7 +41,7 @@ class Login extends Component {
                       <label htmlFor="password">Password</label>
                       <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password" name="password" value={this.state.password} />
                     </div>
-                    <button className="btn btn-primary float-right" type="submit">Login</button>
+                    <button className="btn btn-primary float-right" type="submit"  handleChange={this.handleChange} handleSubmit={this.handleSubmit} user={this.state}>Login</button>
                   </form>
                 </div>
               </div>

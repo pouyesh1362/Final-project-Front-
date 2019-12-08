@@ -3,9 +3,12 @@ import {Switch, Route } from 'react-router-dom';
 import Home from '../components/Home/Home'
 import Register from '../components/Auth/Register';
 import Login from '../components/Auth/Login';
-import Profile from '../components/Profile/Profile';
+import ProfileContainer from '../containers/ProfileCont/ProfileCont';
 import YourHouses from '../components/YourHouses/YourHouse';
-import MarketHouses from '../components/MarketHouses/MarketHouses';
+import Marketcontainer from '../containers/MarketContainer/MarketContainer';
+import AddHouse from '../components/House/AddHouse/AddHouse';
+
+
 
 
 
@@ -14,9 +17,11 @@ export default ({currentUser, setCurrentUser}) => (
     <Route exact path = '/' component = {Home} />
     <Route path = '/register' component={Register}/>
     <Route path = '/login' component={Login}/>
-    <Route path = '/profile' component={Profile}/>
+    <Route path = '/profile' component={ProfileContainer}/>
     <Route path = '/yourhouses' component ={YourHouses}/>
-    <Route path = '/market' component ={MarketHouses}/>
+    <Route path = '/addHouse' component ={AddHouse}/>
+    <Route path = '/market' component ={Marketcontainer}/>
+
 
   </Switch>
 )

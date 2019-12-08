@@ -1,0 +1,23 @@
+#About{
+  background: blueviolet;
+  font-size: 20px;
+  max-width: 100%;
+  height: auto;
+  padding: 70px;
+}
+
+.first-alpha{
+  font-size: 50px;
+  color: red;
+}
+
+.main-article{
+
+  padding: 40px 200px 40px 200px;
+  text-align: justify;
+}
+@media (max-width:500px) {
+  #About{
+    width:100%;
+    }
+}

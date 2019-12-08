@@ -2,7 +2,9 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './Navbar.css'
 
-const Navbar = ()=>{
+
+
+const Navbar = (props)=>{
 
 
   return(
@@ -14,12 +16,11 @@ const Navbar = ()=>{
        <li><NavLink  to="/" className="waves-effect waves-light btn" >Home</NavLink></li>
         <li><NavLink to = "/login" className="waves-effect waves-light btn">Sign in</NavLink></li>
         <li><NavLink to = "/register"  className="waves-effect waves-light btn">Sign UP</NavLink></li>
-
-        <li><NavLink to="/"  className="waves-effect waves-light btn">Log out</NavLink></li>
+        <li><NavLink onClick={() => props.logout() } to="/"  className="waves-effect waves-light btn">Log out</NavLink></li>
         <li><NavLink to="/profile" className="waves-effect waves-light btn">Profile</NavLink></li>
-        
          <li><NavLink to = "/yourhouses" className="waves-effect waves-light btn">Your House</NavLink></li>
-        <li><NavLink to ="/market" className="waves-effect waves-light btn">Market</NavLink></li>  
+        <li><NavLink to ="/market" className="waves-effect waves-light btn">Market</NavLink></li> 
+        <li><NavLink to ="/addhouse" className="waves-effect waves-light btn">Add House</NavLink></li>  
       </ul>
     </div>
   </nav>

@@ -43,11 +43,11 @@ class Register extends Component {
                     <label htmlFor="lastName">Last Name</label>
                     <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="lastName" name="lastName" value={this.state.lastName} />
                   </div>
-                  <div className="file-field input-field">
-                    <div className="btn">
-                      <span>img</span>
-                      <input onChange={this.handleChange} type="file" id="image" name="image" value={this.state.image}/>
-                    </div>
+                  <div className="file-field input-field ">
+                    <div className="custom-file m-b4 ">
+                    <input onChange={this.handleChange} type="file" className="custom-file-input" aria-describedby="inputGroupFileAddon03" id="image" name="image" value={this.state.image} />
+                    <label className="custom-file-label" for="inputGroupFile03">Choose file</label>
+                  </div>
                     <div className="file-path-wrapper">
                       <input className="file-path validate" type="text"/>
                     </div>

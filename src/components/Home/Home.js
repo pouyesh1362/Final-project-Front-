@@ -1,17 +1,20 @@
 import React from 'react';
-import HomeArchive from './HomeArchive/HomeArchive';
-import HomeFooter from './HomeFooter/HomeFooter'
+import Header from './Header/Header';
+import About from './About/About';
+import Gallery from './Gallery/Gallery'
+import '../Home/Header/Header'
 
-const Home = () =>{
-  return(
+
+const Home = ()=>{
+  return (
     <>
-    <HomeArchive/>
-    <HomeFooter/>
+    <Header/>
+    <About/>
+    <Gallery/>
     </>
   )
-}
+};
+
 export default Home;
-
-
 
 
