@@ -8,6 +8,7 @@ import YourHouses from '../components/YourHouses/YourHouse';
 import Marketcontainer from '../containers/MarketContainer/MarketContainer';
 import AddHouse from '../components/House/AddHouse/AddHouse';
 import EditProfile from '../components/EditProfile/EditProfile';
+import EditHouse from '../components/EditHouse/EditHouse';
 
 
 
@@ -27,6 +28,7 @@ export default ({currentUser, setCurrentUser}) => (
     <Route path = '/yourhouses' component ={YourHouses}/>
     <Route path = '/addHouse' component ={AddHouse}/>
     <Route path = '/market' component ={Marketcontainer}/>
+    <Route path = '/edithouses' component={EditHouse}/>
 
 
   </Switch>

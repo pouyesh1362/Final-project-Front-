@@ -1,5 +1,6 @@
 import React from 'react';
 import './Market.css'
+import {Link} from 'react-router-dom';
 const Market =(props)=>{
 
 
@@ -32,7 +33,7 @@ const Market =(props)=>{
                 </>
                 :
                   <>
-                <button className="btn btn-small btn-primary ">Edit</button>
+                <Link  to='/edithouses'><button className="btn btn-small btn-primary ">Edit</button></Link>
                 <button onClick={() => props.handleDelete(house._id)} className="btn btn-small btn-danger">delete</button>
                 </>
                   }         

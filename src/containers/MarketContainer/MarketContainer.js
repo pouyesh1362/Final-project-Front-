@@ -21,8 +21,8 @@ class Marketcontainer extends Component {
   };
 
   handleDelete = (id) => {
-    console.log('Deleting Post ---> ', id);
-    axios.delete(`${process.env.REACT_APP_API_URL}/${id}`)
+    
+    axios.delete(`${process.env.REACT_APP_API_URL}/houses/delete/${id}`)
       .then((res) => {
         console.log(res);
         const filteredHouse = [...this.state.marketHouses].filter((house) => {
@@ -32,8 +32,13 @@ class Marketcontainer extends Component {
       })
       .catch((err) => console.log(err));
   };
+
+
   render() {
-    return (<Market marketHouses={this.state.marketHouses} handleDelete={this.handleDelete}/>);
+    return (
+    <Market marketHouses={this.state.marketHouses} handleDelete={this.handleDelete}/>
+    
+    );
 };
 }
 

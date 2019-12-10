@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Profile from '../../components/Profile/Profile';
 import axios from 'axios';
-import EditProfile from '../../components/EditProfile/EditProfile'
+
 
 class ProfileContainer extends Component {
     state = {
