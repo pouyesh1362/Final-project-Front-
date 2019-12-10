@@ -14,7 +14,7 @@ class ProfileContainer extends Component {
             withCredentials: true,
         })
         .then((res) => {
-            console.log(res);
+            
             this.setState({
                 profile: res.data.data,
                 

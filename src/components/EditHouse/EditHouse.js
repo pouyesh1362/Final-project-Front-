@@ -4,30 +4,47 @@ import axios from 'axios';
 
 
 
-
 class EditHouse extends Component {
+
+  
   state = {
-    image: '',
-    price: '',
-    Room: '',
-    state: '',
-    City: '',
-    ZipCode: '',
+    image: this.props.match.params.image,
+    price: this.props.match.params.price,
+    Room: this.props.match.params.Room,
+    state: this.props.match.params.state,
+    City: this.props.match.params.City,
+    ZipCode: this.props.match.params.ZipCode,
   };
   
+  componentDidMount (){
+    const houseId = this.props.match.params.id;
+    
+    axios.get(`${process.env.REACT_APP_API_URL}/houses/${houseId}`, {
+        withCredentials: true,
+    })
+    .then((res) => {
+      console.log(res);
+      this.setState({House: res.data.data});
+  })
+  .catch((err) => console.log(err))
+};
+
   handleChange = (event) => {
-   
+    
       this.setState({
+          
           [event.target.name]: event.target.value
           
       });
+    
   };
   
-  handleUpdate = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    const userId = localStorage.getItem('uid');
+    const houseId = this.props.match.params.id;
     let newObj = Object.assign({}, this.state);
-    axios.put(`${process.env.REACT_APP_API_URL}/houses/update/${userId}`, newObj, {
+    console.log(newObj);
+    axios.put(`${process.env.REACT_APP_API_URL}/houses/update/${houseId}`, newObj, {
       withCredentials: true,
     })
       .then((res) => {
@@ -37,7 +54,10 @@ class EditHouse extends Component {
       .catch((err) => console.log(err));
   }
 
+  
   render() {
+    // Vanilla JS method for getting URL information
+    // const houseId = window.location.pathname.split('/')[2];
     return (
       <div className="container mt-4">
       <h5>Edit House Info</h5>
@@ -46,7 +66,7 @@ class EditHouse extends Component {
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="Price">Pirce</label>
-                <input onChange={this.handleChange} placeholder= "" className="form-control form-control-lg" type="number" id="price" name="price" value={this.state.price} />
+                <input onChange={this.handleChange} placeholder= " " className="form-control form-control-lg" type="number" id="price" name="price" value={this.state.price} />
               </div>
               <div className="form-group">
                 <label htmlFor="Room">Room</label>
@@ -68,7 +88,7 @@ class EditHouse extends Component {
                 <label htmlFor="ZipCode"> zip code</label>
                 <input onChange={this.handleChange} placeholder= "" className="form-control form-control-lg" type="number" id="ZipCode" name="ZipCode" value={this.state.ZipCode} />
               </div>
-             <button onClick={this.handleUpdate} className="btn btn-primary float-right" type="submit" >Update</button>
+             <button className="btn btn-primary float-right" type="submit" >Update</button>
             </form>
           </div>
         </div>

@@ -4,7 +4,6 @@ import Home from '../components/Home/Home'
 import Register from '../components/Auth/Register';
 import Login from '../components/Auth/Login';
 import ProfileContainer from '../containers/ProfileCont/ProfileCont';
-import YourHouses from '../components/YourHouses/YourHouse';
 import Marketcontainer from '../containers/MarketContainer/MarketContainer';
 import AddHouse from '../components/House/AddHouse/AddHouse';
 import EditProfile from '../components/EditProfile/EditProfile';
@@ -25,10 +24,9 @@ export default ({currentUser, setCurrentUser}) => (
     <Route path = '/register' component={Register}/>
     <Route exact path = '/profile' component={ProfileContainer}/>
     <Route path = '/profile/edit'  component={EditProfile}/>
-    <Route path = '/yourhouses' component ={YourHouses}/>
     <Route path = '/addHouse' component ={AddHouse}/>
     <Route path = '/market' component ={Marketcontainer}/>
-    <Route path = '/edithouses' component={EditHouse}/>
+    <Route path = '/edithouses/:id' component={EditHouse}/>
 
 
   </Switch>

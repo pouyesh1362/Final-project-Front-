@@ -23,7 +23,7 @@ class AddHouse extends Component {
         })
             .then((res) => {
                 console.log(res);
-                window.location.href = "/yourhouses";
+                window.location.href = "/market";
             })
             .catch((err) => console.log(err));
     }

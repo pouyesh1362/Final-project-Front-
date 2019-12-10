@@ -10,13 +10,14 @@
 
 .Gallery-image:hover {
 	opacity: .6;
+	border:2px solid green;
 }
 
 .Gallery-image {
-
   width :400px;
   margin: 50px;
-  height: 400px;
+	height: 350px;
+	border-radius:30px;
 }
 
 @media (max-width: 500px) {

@@ -22,7 +22,6 @@ const Navbar = props=>{
       <>
         <li><NavLink onClick={() => props.logout() } to="/"  className="waves-effect waves-light btn">Log out</NavLink></li>
         <li><NavLink to="/profile" className="waves-effect waves-light btn">Profile</NavLink></li>
-         <li><NavLink to = "/yourhouses" className="waves-effect waves-light btn">Your House</NavLink></li>
         <li><NavLink to ="/addhouse" className="waves-effect waves-light btn">Add House</NavLink></li> 
         <li><NavLink to ="/market" className="waves-effect waves-light btn">Market</NavLink></li> 
       </>

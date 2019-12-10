@@ -33,8 +33,8 @@ const Market =(props)=>{
                 </>
                 :
                   <>
-                <Link  to='/edithouses'><button className="btn btn-small btn-primary ">Edit</button></Link>
-                <button onClick={() => props.handleDelete(house._id)} className="btn btn-small btn-danger">delete</button>
+                <Link  to={`/edithouses/${house._id}`}><button className="btn btn-small btn-primary m-1 ">Edit</button></Link>
+                <button onClick={() => props.handleDelete(house._id)} className="btn btn-small btn-danger m-1">delete</button>
                 </>
                   }         
               </ul>
