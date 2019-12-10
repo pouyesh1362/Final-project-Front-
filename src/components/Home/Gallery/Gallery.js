@@ -11,10 +11,10 @@ import Gallery6 from './gallery_6.jpg'
 const Gallery = ()=>{
   return (
     <section id="gallery">
-      <div classNameName="wrap">
+      <div className="wrap">
         <h2>Issue Twenty</h2>
         <h3>A visual guide to the Southwest</h3>
-            <div classNameName="masonry">
+            <div className="masonry">
               <img className="Gallery-image" src={Gallery1} alt=""/>
               <img className="Gallery-image" src={Gallery3} alt=""/>
               <img className="Gallery-image" src={Gallery4 } alt=""/>

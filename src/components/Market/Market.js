@@ -2,7 +2,13 @@ import React from 'react';
 import './Market.css'
 const Market =(props)=>{
 
+
+  let currentUser = localStorage.getItem('uid')
+
   const marketHouses = props.marketHouses.map((house)=>{
+
+
+
     return (
        
           <div key={house._id}  id="market_div">
@@ -14,14 +20,22 @@ const Market =(props)=>{
             </div>
             <div className="card-back">
               <ul className="ul-card">
-                <li>Rent price : $ {house.price} </li>
+                <li>Rent price : $ {house.price}</li>
                 <li> {house.Room} ' Room </li>
                 <li>State of {house.state}</li>
                 <li>Zip code : {house.ZipCode}</li>
-                <button className="btn btn-small btn-primary ">Edit</button>
-                <a  href ="/ " class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">+</i></a>
-                <button onClick={() => props.handleDelete(house._id)} className="btn btn-small btn-danger">delete</button>
                 
+                
+                {house.owner !== currentUser ?
+                <>
+                <a  href ="/ " className="btn-floating btn-small waves-effect waves-light red"><i className="material-icons">+</i></a>
+                </>
+                :
+                  <>
+                <button className="btn btn-small btn-primary ">Edit</button>
+                <button onClick={() => props.handleDelete(house._id)} className="btn btn-small btn-danger">delete</button>
+                </>
+                  }         
               </ul>
             </div>
           </div>

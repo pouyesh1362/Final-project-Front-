@@ -32,7 +32,7 @@ class Register extends Component {
         return (
           <div className="container mt-4 jumbotron">
             <div className="row">
-              <div className="col-md-4 offset-md-4">
+              <div className="col ">
                 <h4 className="mb-3">Register</h4>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
@@ -43,14 +43,10 @@ class Register extends Component {
                     <label htmlFor="lastName">Last Name</label>
                     <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="lastName" name="lastName" value={this.state.lastName} />
                   </div>
-                  <div className="file-field input-field ">
-                    <div className="custom-file m-b4 ">
-                    <input onChange={this.handleChange} type="file" className="custom-file-input" aria-describedby="inputGroupFileAddon03" id="image" name="image" value={this.state.image} />
-                    <label className="custom-file-label" for="inputGroupFile03">Choose file</label>
-                  </div>
-                    <div className="file-path-wrapper">
-                      <input className="file-path validate" type="text"/>
-                    </div>
+                 
+                  <div className="form-group">
+                    <label htmlFor="ImageLink">Image Link</label>
+                    <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="image" name="image" value={this.state.image} />
                 </div>
                   <div className="form-group">
                     <label htmlFor="name">Email</label>

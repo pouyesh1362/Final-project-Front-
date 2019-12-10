@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
+
 class Login extends Component {
     state = {
         email: '',
@@ -41,7 +42,7 @@ class Login extends Component {
                       <label htmlFor="password">Password</label>
                       <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password" name="password" value={this.state.password} />
                     </div>
-                    <button className="btn btn-primary float-right" type="submit"  handleChange={this.handleChange} handleSubmit={this.handleSubmit} user={this.state}>Login</button>
+                    <button className="btn btn-primary float-right" type="submit"  >Login</button>
                   </form>
                 </div>
               </div>
