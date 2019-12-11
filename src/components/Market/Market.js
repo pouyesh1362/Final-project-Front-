@@ -8,11 +8,9 @@ const Market =(props)=>{
 
   const marketHouses = props.marketHouses.map((house)=>{
 
-
-
     return (
        
-          <div key={house._id}  id="market_div">
+          <div key={house._id}  id="market_div" className = "d-flex m-5">
            
           <div className="card">
           <div className="card-content">
@@ -29,11 +27,11 @@ const Market =(props)=>{
                 
                 {house.owner !== currentUser ?
                 <>
-                <a  href ="/ " className="btn-floating btn-small waves-effect waves-light red"><i className="material-icons">+</i></a>
+                <Link  to={`/renter/${house._id}`}><button className="btn-floating btn-small waves-effect waves-light red"><i className="material-icons">+</i></button></Link>
                 </>
                 :
                   <>
-                <Link  to={`/edithouses/${house._id}`}><button className="btn btn-small btn-primary m-1 ">Edit</button></Link>
+                <Link  to={`/edithouses/${house._id}`}><button  className="btn btn-small btn-primary m-1 ">Edit</button></Link>
                 <button onClick={() => props.handleDelete(house._id)} className="btn btn-small btn-danger m-1">delete</button>
                 </>
                   }         

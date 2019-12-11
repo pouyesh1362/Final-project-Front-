@@ -8,6 +8,7 @@ import Marketcontainer from '../containers/MarketContainer/MarketContainer';
 import AddHouse from '../components/House/AddHouse/AddHouse';
 import EditProfile from '../components/EditProfile/EditProfile';
 import EditHouse from '../components/EditHouse/EditHouse';
+import RenterUpdate from '../components/RanterUpdate/RenterUpdate';
 
 
 
@@ -27,6 +28,7 @@ export default ({currentUser, setCurrentUser}) => (
     <Route path = '/addHouse' component ={AddHouse}/>
     <Route path = '/market' component ={Marketcontainer}/>
     <Route path = '/edithouses/:id' component={EditHouse}/>
+    <Route path = '/renter/:id' component={RenterUpdate}/>
 
 
   </Switch>
