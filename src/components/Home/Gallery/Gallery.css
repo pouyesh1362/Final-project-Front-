@@ -17,7 +17,7 @@
   width :400px;
   margin: 50px;
 	height: 350px;
-	border-radius:30px;
+	border-radius:50px;
 }
 
 @media (max-width: 500px) {

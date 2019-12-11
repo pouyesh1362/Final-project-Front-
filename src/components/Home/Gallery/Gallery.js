@@ -12,8 +12,6 @@ const Gallery = ()=>{
   return (
     <section id="gallery">
       <div className="wrap">
-        <h2>Issue Twenty</h2>
-        <h3>A visual guide to the Southwest</h3>
             <div className="masonry">
               <img className="Gallery-image" src={Gallery1} alt=""/>
               <img className="Gallery-image" src={Gallery3} alt=""/>
